@@ -4,6 +4,8 @@
     --main-color: #c26b6b;
     --aside-color: #9ccf84;
     --footer-color: #7c275b;
+    --nav-text-color: rgb(202, 87, 202);
+    --hover-color: #123;
 }
 
 html {
@@ -13,13 +15,14 @@ html {
 body {
     display: grid;
     grid-template-columns: auto auto minmax(auto, 1000px) auto;
-    grid-template-rows: 100px 80px auto 100px;
+    grid-template-rows: 100px 80px auto min-content;
     grid-template-areas: 
         "header header header header"
         "nav nav nav nav"
         ". main aside ."
         "footer footer footer footer"
         ;
+    min-height: 100dvh;
     margin: 0px;
 }
 
@@ -31,7 +34,56 @@ header {
 nav {
     grid-area: nav;
     background-color: var(--nav-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2%;
 }
+nav ul {
+    list-style: none;
+    display: flex;
+}
+nav ul li {
+    padding: 10px 30px;
+    position: relative;
+}
+nav ul li a {
+    color: var(--nav-text-color);
+    text-decoration: none;
+    font-size: 15px;
+    transition: all 0.4s;
+}
+nav ul li a:hover {
+    color: var(--hover-color);
+}
+.dropdown {
+    display: none;
+}
+nav ul li:hover .dropdown {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: var(--nav-color);
+}
+.dropdown ul {
+    display: block;
+    margin: 10px;
+}
+.dropdown ul li {
+    width: 100px;
+    padding: 10px;
+}
+
+
+
+
+
+
+
+
+
+
 main {
     grid-area: main;
     background-color: var(--main-color);
@@ -45,4 +97,5 @@ aside {
 footer {
     grid-area: footer;
     background-color: var(--footer-color);
+
 }
