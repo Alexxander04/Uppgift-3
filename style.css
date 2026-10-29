@@ -1,0 +1,48 @@
+:root {
+    --header-color: #4edab7;
+    --nav-color: rgb(111, 174, 236);
+    --main-color: #c26b6b;
+    --aside-color: #9ccf84;
+    --footer-color: #7c275b;
+}
+
+html {
+
+}
+
+body {
+    display: grid;
+    grid-template-columns: auto auto minmax(auto, 1000px) auto;
+    grid-template-rows: 100px 80px auto 100px;
+    grid-template-areas: 
+        "header header header header"
+        "nav nav nav nav"
+        ". main aside ."
+        "footer footer footer footer"
+        ;
+    margin: 0px;
+}
+
+header {
+    grid-area: header;
+    background-color: var(--header-color);
+}
+
+nav {
+    grid-area: nav;
+    background-color: var(--nav-color);
+}
+main {
+    grid-area: main;
+    background-color: var(--main-color);
+}
+
+aside {
+    grid-area: aside;
+    background-color: var(--aside-color);
+}
+
+footer {
+    grid-area: footer;
+    background-color: var(--footer-color);
+}
