@@ -4,8 +4,8 @@
     --main-color: #c26b6b;
     --aside-color: #9ccf84;
     --footer-color: #7c275b;
-    --nav-text-color: rgb(202, 87, 202);
-    --hover-color: #123;
+    --nav-text-color: rgb(0, 0, 0);
+    --hover-color: rgb(255, 255, 255);
 }
 
 html {
@@ -35,7 +35,6 @@ nav {
     grid-area: nav;
     background-color: var(--nav-color);
     display: flex;
-    align-items: center;
     justify-content: space-between;
     padding: 0 2%;
 }
@@ -50,7 +49,7 @@ nav ul li {
 nav ul li a {
     color: var(--nav-text-color);
     text-decoration: none;
-    font-size: 15px;
+    font-size: 25px;
     transition: all 0.4s;
 }
 nav ul li a:hover {
@@ -71,8 +70,12 @@ nav ul li:hover .dropdown {
     margin: 10px;
 }
 .dropdown ul li {
-    width: 100px;
+    width: 150px;
     padding: 10px;
+}
+.dropdown ul li a {
+    font-size: 20px;
+    text-align: center;
 }
 
 
