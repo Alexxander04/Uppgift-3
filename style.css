@@ -7,9 +7,11 @@
     --nav-text-color: rgb(0, 0, 0);
     --hover-color: rgb(255, 255, 255);
 }
-
 html {
 
+}
+* {
+    
 }
 
 body {
@@ -31,6 +33,11 @@ header {
     background-color: var(--header-color);
 }
 
+h1, nav ul li {
+    display: flex;
+    align-items: center;
+}
+
 nav {
     grid-area: nav;
     background-color: var(--nav-color);
@@ -41,10 +48,14 @@ nav {
 nav ul {
     list-style: none;
     display: flex;
+    margin: 0px;
 }
 nav ul li {
     padding: 10px 30px;
     position: relative;
+}
+nav ul li:hover {
+    background-color: red;
 }
 nav ul li a {
     color: var(--nav-text-color);
@@ -52,7 +63,7 @@ nav ul li a {
     font-size: 25px;
     transition: all 0.4s;
 }
-nav ul li a:hover {
+nav ul li:hover > a {
     color: var(--hover-color);
 }
 .dropdown {
@@ -67,7 +78,7 @@ nav ul li:hover .dropdown {
 }
 .dropdown ul {
     display: block;
-    margin: 10px;
+    padding: 0px;
 }
 .dropdown ul li {
     width: 150px;
