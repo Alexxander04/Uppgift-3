@@ -6,6 +6,7 @@
     --footer-color: #7c275b;
     --nav-text-color: rgb(0, 0, 0);
     --hover-color: rgb(255, 255, 255);
+    --hover-background: red;
 }
 html {
 
@@ -44,6 +45,8 @@ nav {
     display: flex;
     justify-content: space-between;
     padding: 0 2%;
+    z-index: 1;
+    box-shadow: 0px 9px 6px 0px rgba(0,0,0,0.61);
 }
 nav ul {
     list-style: none;
@@ -55,7 +58,7 @@ nav ul li {
     position: relative;
 }
 nav ul li:hover {
-    background-color: red;
+    background-color: var(--hover-background);
 }
 nav ul li a {
     color: var(--nav-text-color);
@@ -75,6 +78,9 @@ nav ul li:hover .dropdown {
     left: 0;
     top: 100%;
     background-color: var(--nav-color);
+    box-shadow: 10px 9px 6px 5px rgba(0,0,0,0.61);
+    border-bottom: 3px solid rgb(45, 78, 94);
+    border-right: 3px solid rgb(45, 78, 94);
 }
 .dropdown ul {
     display: block;
@@ -83,6 +89,10 @@ nav ul li:hover .dropdown {
 .dropdown ul li {
     width: 150px;
     padding: 10px;
+    border-left: 3px solid rgb(100, 164, 236);
+}
+nav ul li .dropdown li:hover {
+    border-left: 3px solid var(--hover-background);
 }
 .dropdown ul li a {
     font-size: 20px;
