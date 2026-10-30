@@ -2,7 +2,7 @@
     --header-color: #4edab7;
     --nav-color: rgb(111, 174, 236);
     --main-color: #c26b6b;
-    --aside-color: #9ccf84;
+    /* --aside-color: #9ccf84; */
     --footer-color: #7c275b;
     --nav-text-color: rgb(0, 0, 0);
     --hover-color: rgb(255, 255, 255);
@@ -17,23 +17,23 @@ html {
 
 body {
     display: grid;
-    grid-template-columns: auto auto minmax(auto, 1000px) auto;
+    grid-template-columns: 1fr minmax(auto, 1000px) 1fr;
     grid-template-rows: 100px 80px auto min-content;
     grid-template-areas: 
-        "header header header header"
-        "nav nav nav nav"
-        ". main aside ."
-        "footer footer footer footer"
+        "header header header"
+        "nav nav nav"
+        ". main ."
+        "footer footer footer"
         ;
     min-height: 100dvh;
     margin: 0px;
 }
-
 header {
     grid-area: header;
     background-color: var(--header-color);
 }
 
+/*Navigation*/
 h1, nav ul li {
     display: flex;
     align-items: center;
@@ -45,7 +45,7 @@ nav {
     display: flex;
     justify-content: space-between;
     padding: 0 2%;
-    z-index: 1;
+    z-index: 2;
     box-shadow: 0px 9px 6px 0px rgba(0,0,0,0.61);
 }
 nav ul {
@@ -81,6 +81,7 @@ nav ul li:hover .dropdown {
     box-shadow: 10px 9px 6px 5px rgba(0,0,0,0.61);
     border-bottom: 3px solid rgb(45, 78, 94);
     border-right: 3px solid rgb(45, 78, 94);
+    z-index: 1;
 }
 .dropdown ul {
     display: block;
@@ -98,10 +99,19 @@ nav ul li .dropdown li:hover {
     font-size: 20px;
     text-align: center;
 }
+/*Navigation slut*/
 
+/*startsida*/
+#Start {
+    grid-area: rubrik;
+    text-align: center;
+}
 
-
-
+/*bilder*/ 
+.image {
+    width: 100%;
+    
+}
 
 
 
@@ -111,15 +121,58 @@ nav ul li .dropdown li:hover {
 main {
     grid-area: main;
     background-color: var(--main-color);
-}
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+    grid-template-rows: min-content min-content;
+    grid-template-areas: 
+        "rubrik rubrik"
+        "section aside"
+        ;
 
+}
+section {
+    grid-area: section;
+    margin: 0px 15px;
+}
 aside {
     grid-area: aside;
-    background-color: var(--aside-color);
 }
-
 footer {
     grid-area: footer;
     background-color: var(--footer-color);
+
+}
+
+/*Media Screen*/
+@media screen and (max-width: 750px) {
+    body {
+        grid-template-columns: auto;
+        grid-template-rows: 80px min-content auto min-content;
+        grid-template-areas: 
+        "header"
+        "nav"
+        "main"
+        "footer";
+    }
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    nav ul {
+        flex-direction: column;
+        padding: 0px;
+    }
+    nav ul li {
+        justify-content: center;
+    }
+    main {
+        grid-template-columns: 1fr;
+        grid-template-rows: min-content min-content min-content;
+        grid-template-areas: 
+        "rubrik"
+        "section"
+        "aside"
+        ;
+    }
 
 }
