@@ -99,8 +99,26 @@ nav ul li .dropdown li:hover {
     font-size: 20px;
     text-align: center;
 }
-/*Navigation slut*/
+/*Navigering på sidan*/
+aside ul {
+    list-style: none;
+    padding: 0px 20px;
+    margin: 20px 0px;
+}
+aside a {
+    color: black;
+    font-size: 15px;
+    text-decoration: none;
+}
+aside ul li a {
+    font-size: 10px;
+}
 
+
+
+
+
+/*Navigation slut*/
 /*startsida*/
 #Start {
     grid-area: rubrik;
@@ -109,7 +127,7 @@ nav ul li .dropdown li:hover {
 
 /*Varor*/
 .vara {
-    max-width: 200px;
+    max-width: 160px;
     background-color: white;
     padding: 20px;
     margin: 20px;
@@ -120,6 +138,7 @@ nav ul li .dropdown li:hover {
 .hylla {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 .knapp {
     background-color: lightgreen;
@@ -171,6 +190,15 @@ main {
         "section aside"
         ;
 }
+.shop {
+    display: grid;
+    grid-template-columns: 1fr 0.1fr;
+    grid-template-rows: min-content min-content;
+    grid-template-areas: 
+        "rubrik rubrik"
+        "section aside"
+        ;
+}
 section {
     grid-area: section;
     margin: 0px 15px;
@@ -206,7 +234,7 @@ footer {
     nav ul li {
         justify-content: center;
     }
-    #startsida {
+    #startsida, .shop {
         grid-template-columns: 1fr;
         grid-template-rows: min-content min-content min-content;
         grid-template-areas: 
