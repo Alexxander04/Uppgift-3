@@ -107,6 +107,46 @@ nav ul li .dropdown li:hover {
     text-align: center;
 }
 
+/*Varor*/
+.vara {
+    max-width: 200px;
+    background-color: white;
+    padding: 20px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.hylla {
+    display: flex;
+    flex-wrap: wrap;
+}
+.knapp {
+    background-color: lightgreen;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    border: 0.5px solid black;
+    border-radius: 10px;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    margin-top: auto;
+    width: 100%;
+}
+.vara h3 {
+    margin: 0px;
+    width: 100%;
+    text-align: left;
+    font-size: 1.5em;
+}
+.vara p {
+    width: 100%;
+    text-align: left;
+}
+.info {
+    margin-top: 5px;
+    font-size: 0.8em;
+}
 /*bilder*/ 
 .image {
     width: 100%;
@@ -121,6 +161,8 @@ nav ul li .dropdown li:hover {
 main {
     grid-area: main;
     background-color: var(--main-color);
+}
+#startsida {
     display: grid;
     grid-template-columns: 1fr 0.5fr;
     grid-template-rows: min-content min-content;
@@ -128,7 +170,6 @@ main {
         "rubrik rubrik"
         "section aside"
         ;
-
 }
 section {
     grid-area: section;
@@ -165,7 +206,7 @@ footer {
     nav ul li {
         justify-content: center;
     }
-    main {
+    #startsida {
         grid-template-columns: 1fr;
         grid-template-rows: min-content min-content min-content;
         grid-template-areas: 
