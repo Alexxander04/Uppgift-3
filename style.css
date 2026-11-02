@@ -1,12 +1,13 @@
 :root {
-    --header-color: #4edab7;
-    --nav-color: rgb(111, 174, 236);
-    --main-color: #c26b6b;
+    --header-color: #101827;
+    --nav-color: #101827;
+    --main-color: #171525;
     /* --aside-color: #9ccf84; */
-    --footer-color: #7c275b;
-    --nav-text-color: rgb(0, 0, 0);
+    --footer-color: #101827;
+    --nav-text-color: white;
     --hover-color: rgb(255, 255, 255);
     --hover-background: red;
+    --gradient-effekt: linear-gradient(90deg, #00D9FF, #A855F7);
 }
 html {
 
@@ -27,6 +28,8 @@ body {
         ;
     min-height: 100dvh;
     margin: 0px;
+    background-image: url("bakgrund.png");
+    background-size: cover;
 }
 header {
     grid-area: header;
@@ -38,7 +41,13 @@ h1, nav ul li {
     display: flex;
     align-items: center;
 }
-
+.gradient {
+    background: var(--gradient-effekt);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-left: 8px;
+}
 nav {
     grid-area: nav;
     background-color: var(--nav-color);
@@ -171,7 +180,47 @@ aside ul li a {
     width: 100%;
     
 }
-
+/*form*/ 
+#betala {
+    font-size: 25px;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+}
+#forms {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0px;
+}
+.form {
+    max-width: fit-content;
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+}
+.input label{
+    display: inline-block;
+    margin: 10px 0px;
+    font-size: 20px;
+}
+.input input {
+    width: 100%;
+    padding: 12px 15px;
+    box-sizing: border-box;
+    border: 1px solid rgb(161, 155, 155);
+    border-radius: 10px;
+    font-size: 15px;
+}
+#button_box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+#button {
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
 
 
 
@@ -180,6 +229,7 @@ aside ul li a {
 main {
     grid-area: main;
     background-color: var(--main-color);
+    color: white;
 }
 #startsida {
     display: grid;
