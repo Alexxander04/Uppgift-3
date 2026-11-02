@@ -200,15 +200,19 @@ section p {
 /*bilder*/ 
 .image {
     width: 100%;
-    
 }
 .bild {
-    max-width: 400px;
-    float: right;
+    max-width: 300px;
 }
-.bild2 {
-    max-width: 400px;
-    float: left;
+.textbox {
+    max-width: 500px;
+}
+.kort {
+    display: flex;
+    background-color: var(--nav-color);
+    padding: 10px;
+    max-width: fit-content;
+    margin:auto;
 }
 /*form*/ 
 #betala {
@@ -264,11 +268,10 @@ main {
 #startsida {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: min-content min-content min-content;
+    grid-template-rows: min-content min-content;
     grid-template-areas: 
         "rubrik"
         "section"
-        "section2"
         ;
 }
 .shop {
@@ -319,13 +322,21 @@ footer {
     nav ul li {
         justify-content: center;
     }
-    #startsida, .shop {
+    #startsida {
         grid-template-columns: 1fr;
-        grid-template-rows: min-content min-content min-content;
+        grid-template-rows: min-content min-content;
         grid-template-areas: 
         "rubrik"
         "section"
-        "section2"
+        ;
+    }
+    .shop {
+        grid-template-columns: 1fr;
+        grid-template-rows: min-content min-content;
+        grid-template-areas: 
+        "rubrik"
+        "section"
+        "aside"
         ;
     }
     aside ul {
