@@ -5,9 +5,11 @@
     /* --aside-color: #9ccf84; */
     --footer-color: #101827;
     --nav-text-color: white;
+    --blå--color: #00CFFF;
     --hover-color: rgb(255, 255, 255);
     --hover-background: red;
     --gradient-effekt: linear-gradient(90deg, #00D9FF, #A855F7);
+    --black: rgb(0, 0, 0);
 }
 html {
 
@@ -40,6 +42,7 @@ header {
 h1, nav ul li {
     display: flex;
     align-items: center;
+    color: var(--nav-text-color);
 }
 .gradient {
     background: var(--gradient-effekt);
@@ -133,6 +136,23 @@ aside ul li a {
     grid-area: rubrik;
     text-align: center;
 }
+section h3 {
+    padding: 0px 15px;
+    margin: 10px;
+    text-align: center;
+}
+section p {
+    padding: 0px 15px;
+    margin: 0px;
+    text-align: left;
+}
+.text {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-bottom: 20px;
+    max-width: 400px;
+}
 
 /*Varor*/
 .vara {
@@ -150,14 +170,14 @@ aside ul li a {
     justify-content: center;
 }
 .knapp {
-    background-color: lightgreen;
+    background-color: var(--blå--color);
     padding: 10px 20px;
     box-sizing: border-box;
-    border: 0.5px solid black;
+    border: 0.5px solid var(--black);
     border-radius: 10px;
     text-decoration: none;
     text-align: center;
-    color: black;
+    color: var(--black);
     margin-top: auto;
     width: 100%;
 }
@@ -166,10 +186,12 @@ aside ul li a {
     width: 100%;
     text-align: left;
     font-size: 1.5em;
+    color: var(--black);
 }
 .vara p {
     width: 100%;
     text-align: left;
+    color: var(--black);
 }
 .info {
     margin-top: 5px;
@@ -179,6 +201,14 @@ aside ul li a {
 .image {
     width: 100%;
     
+}
+.bild {
+    max-width: 400px;
+    float: right;
+}
+.bild2 {
+    max-width: 400px;
+    float: left;
 }
 /*form*/ 
 #betala {
@@ -233,11 +263,12 @@ main {
 }
 #startsida {
     display: grid;
-    grid-template-columns: 1fr 0.5fr;
-    grid-template-rows: min-content min-content;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content min-content min-content;
     grid-template-areas: 
-        "rubrik rubrik"
-        "section aside"
+        "rubrik"
+        "section"
+        "section2"
         ;
 }
 .shop {
@@ -251,6 +282,10 @@ main {
 }
 section {
     grid-area: section;
+    margin: 0px 15px;
+}
+.section2 {
+    grid-area: section2;
     margin: 0px 15px;
 }
 aside {
@@ -290,7 +325,7 @@ footer {
         grid-template-areas: 
         "rubrik"
         "section"
-        "aside"
+        "section2"
         ;
     }
     aside ul {
