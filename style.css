@@ -2,22 +2,20 @@
     --header-color: #101827;
     --nav-color: #101827;
     --main-color: #171525;
-    /* --aside-color: #9ccf84; */
     --footer-color: #101827;
     --nav-text-color: white;
     --blå--color: #00CFFF;
     --hover-color: rgb(255, 255, 255);
-    --hover-background: red;
+    --hover-background: rgba(128, 128, 128, 0.5);;
     --gradient-effekt: linear-gradient(90deg, #00D9FF, #A855F7);
     --black: rgb(0, 0, 0);
-}
-html {
-
+    --shadow: 10px 9px 6px 5px rgba(0,0,0,0.61);
+    --shadow2: 0px 9px 6px 0px rgba(0,0,0,0.61);
+    --shadow3: 0px -9px 6px 0px rgba(0,0,0,0.61);
 }
 * {
-    
+    font-family: 'Poppins', sans-serif;
 }
-
 body {
     display: grid;
     grid-template-columns: 1fr minmax(auto, 1000px) 1fr;
@@ -36,6 +34,12 @@ body {
 header {
     grid-area: header;
     background-color: var(--header-color);
+    display: flex;
+    justify-content: center;
+}
+#banner {
+    width: 100%;
+    max-width: 800px;
 }
 
 /*Navigation*/
@@ -58,7 +62,7 @@ nav {
     justify-content: space-between;
     padding: 0 2%;
     z-index: 2;
-    box-shadow: 0px 9px 6px 0px rgba(0,0,0,0.61);
+    box-shadow: var(--shadow2);
 }
 nav ul {
     list-style: none;
@@ -66,7 +70,7 @@ nav ul {
     margin: 0px;
 }
 nav ul li {
-    padding: 10px 30px;
+    padding: 10px 10px;
     position: relative;
 }
 nav ul li:hover {
@@ -90,7 +94,7 @@ nav ul li:hover .dropdown {
     left: 0;
     top: 100%;
     background-color: var(--nav-color);
-    box-shadow: 10px 9px 6px 5px rgba(0,0,0,0.61);
+    box-shadow: var(--shadow);
     border-bottom: 3px solid rgb(45, 78, 94);
     border-right: 3px solid rgb(45, 78, 94);
     z-index: 1;
@@ -134,7 +138,15 @@ aside ul li a {
 /*startsida*/
 #Start {
     grid-area: rubrik;
+}
+.center {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     text-align: center;
+}
+#wrap {
+    flex-wrap: wrap;
 }
 section h3 {
     padding: 0px 15px;
@@ -200,19 +212,24 @@ section p {
 /*bilder*/ 
 .image {
     width: 100%;
+    border: 2px solid transparent;
+    background: var(--gradient-effekt) border-box;
 }
 .bild {
     max-width: 300px;
 }
 .textbox {
-    max-width: 500px;
+    max-width: 400px;
 }
 .kort {
     display: flex;
+    margin: auto;
     background-color: var(--nav-color);
     padding: 10px;
     max-width: fit-content;
-    margin:auto;
+}
+.border {
+    border: 1px solid var(--gradient-effekt);
 }
 /*form*/ 
 #betala {
@@ -297,11 +314,24 @@ aside {
 footer {
     grid-area: footer;
     background-color: var(--footer-color);
-
+    box-shadow: var(--shadow3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--nav-text-color)
+}
+footer p {
+    margin: 0px;
+    max-width: fit-content;
+}
+.footer {
+    margin-bottom: 10px;
+    padding: 0px 20px;
 }
 
 /*Media Screen*/
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 800px) {
     body {
         grid-template-columns: auto;
         grid-template-rows: 80px min-content auto min-content;
@@ -344,5 +374,12 @@ footer {
         align-items: center;
         flex-direction: column;
     }
-
+    .kort {
+        flex-direction: column;
+        align-items: center;
+    }
+    #kort2 {
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+    }
 }
