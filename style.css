@@ -30,7 +30,7 @@ body {
     ;
     min-height: 100dvh;
     margin: 0px;
-    background-image: url("bakgrund.png");
+    background-image: url("bakgrund.jpg");
     background-size: cover;
 }
 
@@ -61,7 +61,12 @@ nav ul li {
     background-clip: text;
     margin-left: 8px;
 }
-
+.active {
+    background: var(--gradient-effekt);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
 nav {
     grid-area: nav;
     background-color: var(--dark_cyan);
@@ -94,10 +99,6 @@ nav ul li a {
     transition: all 0.4s;
 }
 
-nav ul li:hover>a {
-    color: var(--hover-color);
-}
-
 .dropdown {
     display: none;
 }
@@ -127,6 +128,10 @@ nav ul li:hover .dropdown {
 
 nav ul li .dropdown li:hover {
     border-left: 3px solid var(--hover-background);
+    background: var(--gradient-effekt);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .dropdown ul li a {
@@ -225,7 +230,6 @@ section p {
     margin: 20px;
     display: flex;
     flex-direction: column;
-    border-radius: 5px;
     border: 2px solid;
     border-image: var(--gradient-effekt) 1;
 }
@@ -322,9 +326,11 @@ section p {
 
 .form {
     max-width: fit-content;
-    background-color: white;
+    background-color: var(--nav-text-color);
     padding: 30px;
-    border-radius: 15px;
+    color: var(--black);
+    border: 2px solid;
+    border-image: var(--gradient-effekt) 1;
 }
 
 .input label {
@@ -453,6 +459,9 @@ footer p {
     .kort {
         flex-direction: column;
         align-items: center;
+    }
+    section {
+        margin-bottom: 20px;
     }
 
     #kort2 {
