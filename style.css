@@ -202,7 +202,7 @@ aside ul {
     flex-wrap: wrap;
 }
 
-section h3 {
+section h2 {
     padding: 0px 15px;
     margin: 10px;
     text-align: center;
@@ -252,7 +252,7 @@ section p {
     width: 100%;
 }
 
-.vara h3 {
+.vara h2 {
     margin: 10px 0px;
     padding: 0px;
     width: 100%;
